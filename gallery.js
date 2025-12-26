@@ -1,3 +1,6 @@
+let currentImages = [];
+let currentIndex = 0;
+
 const characters = {
   makima: {
     name: "Guangqiao, Qinhua",
@@ -212,14 +215,14 @@ const zoomedImage = document.getElementById("zoomedImage");
 function openGallery(character) {
   characterName.textContent = character.name;
   galleryImages.innerHTML = "";
+  currentImages = character.images;
 
-  character.images.forEach(img => {
+  character.images.forEach((img, index) => {
     const image = document.createElement("img");
     image.src = img;
     image.loading = "lazy";
 
-    // 👇 CLICK TO ZOOM
-    image.onclick = () => openImageZoom(img);
+    image.onclick = () => openImageZoom(index);
 
     galleryImages.appendChild(image);
   });
@@ -227,11 +230,32 @@ function openGallery(character) {
   galleryModal.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
-
+/* Function to count images */
+function updateCounter() {
+  imageCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+}
 /* Open zoom */
-function openImageZoom(src) {
-  zoomedImage.src = src;
+function openImageZoom(index) {
+  currentIndex = index;
+  zoomedImage.src = currentImages[currentIndex];
   imageZoomModal.style.display = "flex";
+  updateCounter();
+}
+/* Previous Image */
+function prevImage() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    zoomedImage.src = currentImages[currentIndex];
+    updateCounter();
+  }
+}
+/* Next Image */
+function nextImage() {
+  if (currentIndex < currentImages.length - 1) {
+    currentIndex++;
+    zoomedImage.src = currentImages[currentIndex];
+    updateCounter();
+  }
 }
 
 /* Close zoom */
@@ -247,3 +271,26 @@ imageZoomModal.addEventListener("click", (e) => {
   }
 });
 
+let startX = 0;
+let endX = 0;
+
+imageZoomModal.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+imageZoomModal.addEventListener("touchend", (e) => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeDistance = endX - startX;
+
+  if (Math.abs(swipeDistance) < 50) return; // ignore small swipes
+
+  if (swipeDistance < 0) {
+    nextImage(); // swipe left
+  } else {
+    prevImage(); // swipe right
+  }
+}
