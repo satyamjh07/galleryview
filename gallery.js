@@ -184,6 +184,20 @@ const characters = {
       `sigurd/${i + 1}.jpeg`
     )
   },
+  freya: {
+    name: "freya",
+    cover: "freya/1.jpeg",
+    images: Array.from({ length: 183 }, (_, i) =>
+      `freya/${i + 1}.jpeg`
+    )
+  },
+  CelestineLucullus: {
+    name: "CelestineLucullus",
+    cover: "CelestineLucullus/1.jpeg",
+    images: Array.from({ length: 168 }, (_, i) =>
+      `CelestineLucullus/${i + 1}.jpeg`
+    )
+  },
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
