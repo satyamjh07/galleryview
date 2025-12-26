@@ -173,8 +173,7 @@ const characters = {
   mikasa: {
     name: "Mira Tsubakihara",
     cover: "MiraTsubakihara/1.jpeg",
-    images = Array.from({ length: 155 }, (_, i) =>
-  `MiraTsubakihara/${i + 1}.jpeg`
+    images = [ "MiraTsubakihara/2.jpeg",]
 );
   }
 };
