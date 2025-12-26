@@ -173,9 +173,9 @@ const characters = {
     Tsubakihara: {
     name: "Mira Tsubakihara",
     cover: "MiraTsubakihara/1.jpeg",
-    images: [
-    "MiraTsubakihara/2.jpeg",
-    ]
+    images: Array.from({ length: 168 }, (_, i) =>
+      `MiraTsubakihara/${i + 1}.jpeg`
+    )
   },
          };
 
