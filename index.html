@@ -25,7 +25,10 @@
 <!-- Image Zoom Modal -->
 <div class="image-zoom-modal" id="imageZoomModal">
   <span class="zoom-close" onclick="closeImageZoom()">✖</span>
+  <button class="nav-btn left" onclick="prevImage()">❮</button>
   <img id="zoomedImage" />
+  <button class="nav-btn right" onclick="nextImage()">❯</button>
+  <div class="image-counter" id="imageCounter"></div>
 </div>
     <div class="gallery-images" id="galleryImages"></div>
   </div>
