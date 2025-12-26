@@ -207,7 +207,7 @@ function closeGallery() {
 
 /* Redirect back to anime site */
 function goToAnime() {
-  window.location.href = "adultverse.netlify.app"; // change path as needed
+  window.location.href = "https://adultverse.netlify.app/"; // change path as needed
 }const imageZoomModal = document.getElementById("imageZoomModal");
 const zoomedImage = document.getElementById("zoomedImage");
 
