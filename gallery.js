@@ -177,6 +177,13 @@ const characters = {
       `MiraTsubakihara/${i + 1}.jpeg`
     )
   },
+  Sigurd: {
+    name: "sigurd",
+    cover: "sigurd/1.jpeg",
+    images: Array.from({ length: 184 }, (_, i) =>
+      `sigurd/${i + 1}.jpeg`
+    )
+  },
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
