@@ -174,7 +174,6 @@ const characters = {
     name: "Mira Tsubakihara",
     cover: "MiraTsubakihara/1.jpeg",
     images = [ "MiraTsubakihara/2.jpeg",]
-);
   }
 };
 
