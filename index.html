@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Character Gallery</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1>Character Gallery</h1>
+    <button onclick="goToAnime()">Go to Anime</button>
+  </header>
+
+  <main class="gallery-grid" id="galleryGrid"></main>
+
+  <!-- Gallery Modal -->
+  <div class="gallery-modal" id="galleryModal">
+    <div class="gallery-header">
+      <h2 id="characterName"></h2>
+      <span class="close-btn" onclick="closeGallery()">✖</span>
+    </div>
+    
+<!-- Image Zoom Modal -->
+<div class="image-zoom-modal" id="imageZoomModal">
+  <span class="zoom-close" onclick="closeImageZoom()">✖</span>
+  <img id="zoomedImage" />
+</div>
+    <div class="gallery-images" id="galleryImages"></div>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
+

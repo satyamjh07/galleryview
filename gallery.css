@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER ================= */
+.header {
+  height: 70px;
+  background: linear-gradient(90deg, #120909, #1c0b0b);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header button {
+  background: crimson;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ================= CHARACTER GRID ================= */
+.gallery-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.character-card {
+  background: #111;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.character-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.character-card h3 {
+  text-align: center;
+  padding: 10px;
+}
+
+/* ================= GALLERY MODAL ================= */
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* ================= GALLERY HEADER ================= */
+.gallery-header {
+  height: 70px;
+  flex-shrink: 0;
+  background: #120909;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ================= SCROLLABLE IMAGE AREA ================= */
+.gallery-images {
+  flex: 1; /* TAKE REMAINING SPACE */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  column-count: 4;
+  column-gap: 16px;
+}
+
+/* Masonry images */
+.gallery-images img {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  cursor: pointer;
+  break-inside: avoid;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .gallery-images {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-images {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-images {
+    column-count: 1;
+  }
+}
+
+/* ================= IMAGE ZOOM MODAL ================= */
+.image-zoom-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.image-zoom-modal img {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.zoom-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
