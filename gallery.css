@@ -133,11 +133,48 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 2000;
+  touch-action: pan-y;
 }
 
 .image-zoom-modal img {
   max-width: 95%;
   max-height: 95%;
+}
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.nav-btn.left {
+  left: 20px;
+}
+
+.nav-btn.right {
+  right: 20px;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 25px;
+  color: #fff;
+  font-size: 14px;
+  background: rgba(0,0,0,0.5);
+  padding: 6px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
 }
 
 .zoom-close {
@@ -147,3 +184,4 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
+
