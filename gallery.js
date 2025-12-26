@@ -171,11 +171,11 @@ const characters = {
     ]
   },
   mikasa: {
-    name: "Mikasa Ackerman",
-    cover: "images/mikasa/cover.jpg",
-    images: [
-      "images/mikasa/1.jpg"
-    ]
+    name: "Mira Tsubakihara",
+    cover: "MiraTsubakihara/1.jpeg",
+    images = Array.from({ length: 155 }, (_, i) =>
+  `MiraTsubakihara/${i + 1}.jpeg`
+);
   }
 };
 
