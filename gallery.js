@@ -170,12 +170,7 @@ const characters = {
        "Guangqiao/00171-1593221417.jpeg",
     ]
   },
-  mikasa: {
-    name: "Mira Tsubakihara",
-    cover: "MiraTsubakihara/1.jpeg",
-    images = [ "MiraTsubakihara/2.jpeg",]
-  }
-};
+         };
 
 const galleryGrid = document.getElementById("galleryGrid");
 const galleryModal = document.getElementById("galleryModal");
