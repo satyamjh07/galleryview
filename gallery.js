@@ -201,9 +201,9 @@ const characters = {
   
   Annierose: {
     name: "Annierose",
-    cover: "bdsm/1.jpeg",
+    cover: "bdsm/1 .jpeg",
     images: Array.from({ length: 160 }, (_, i) =>
-      `bdsm/${i + 1}.jpeg`
+      `bdsm/${i + 1} .jpeg`
     )
   },
          };
