@@ -206,6 +206,38 @@ const characters = {
       `bdsm/${i + 1} .jpeg`
     )
   },
+  
+  SakuraAoi: {
+    name: "Sakura Aoi",
+    cover: "SakuraAoi/1.jpeg",
+    images: Array.from({ length: 153 }, (_, i) =>
+      `SakuraAoi/${i + 1}.jpeg`
+    )
+  },
+  
+  ShizumoriNodoka: {
+    name: "Shizumori Nodoka",
+    cover: "ShizumoriNodoka/1.jpeg",
+    images: Array.from({ length: 150 }, (_, i) =>
+      `ShizumoriNodoka/${i + 1}.jpeg`
+    )
+  },
+  
+  Asagilgawa: {
+    name: "AsagiIgawa",
+    cover: "AsagiIgawa/1.jpeg",
+    images: Array.from({ length: 160 }, (_, i) =>
+      `Asagilgawa/${i + 1}.jpeg`
+    )
+  },
+  
+  KogawaAsuka: {
+    name: "KogawaAsuka",
+    cover: "KogawaAsuka/1.jpeg",
+    images: Array.from({ length: 160 }, (_, i) =>
+      `KogawaAsuka/${i + 1}.jpeg`
+    )
+  },
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
