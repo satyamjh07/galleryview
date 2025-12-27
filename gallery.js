@@ -198,6 +198,14 @@ const characters = {
       `CelestineLucullus/${i + 1}.jpeg`
     )
   },
+  
+  Annierose: {
+    name: "Annierose",
+    cover: "bdsm/1.jpeg",
+    images: Array.from({ length: 160 }, (_, i) =>
+      `bdsm/${i + 1}.jpeg`
+    )
+  },
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
