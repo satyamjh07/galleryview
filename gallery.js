@@ -224,8 +224,8 @@ const characters = {
   },
   
   Asagilgawa: {
-    name: "AsagiIgawa",
-    cover: "AsagiIgawa/1.jpeg",
+    name: "Asagilgawa",
+    cover: "Asagilgawa/1.jpeg",
     images: Array.from({ length: 160 }, (_, i) =>
       `Asagilgawa/${i + 1}.jpeg`
     )
