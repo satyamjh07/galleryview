@@ -228,8 +228,13 @@ function closeGallery() {
 
 /* Redirect back to anime site */
 function goToAnime() {
-  window.location.href = "https://adultverse.netlify.app/"; // change path as needed
-}const imageZoomModal = document.getElementById("imageZoomModal");
+  window.location.href = "https://adultverse.netlify.app/";
+}
+function goTocontactus() {
+window.location.href = "https://adultverse-contact.netlify.app/"; 
+}
+
+const imageZoomModal = document.getElementById("imageZoomModal");
 const zoomedImage = document.getElementById("zoomedImage");
 
 /* Modify openGallery() image creation */
