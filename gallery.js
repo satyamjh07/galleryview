@@ -252,6 +252,21 @@ const characters = {
       `LisaTepes/${i + 1}.jpeg`
     )
   },
+  Nephilia: {
+    name: "Nephilia",
+    cover: "Nephilia/1.jpeg",
+    images: Array.from({ length: 168 }, (_, i) =>
+      `Nephilia/${i + 1}.jpeg`
+    )
+  },
+  LenoreRaino: {
+    name: "Lenore Raino",
+    cover: "LenoreRaino/1.jpeg",
+    images: Array.from({ length: 161 }, (_, i) =>
+      `LenoreRaino/${i + 1}.jpeg`
+    )
+  },
+  
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
