@@ -238,6 +238,20 @@ const characters = {
       `KogawaAsuka/${i + 1}.jpeg`
     )
   },
+  AyaToyomori: {
+    name: "Aya Toyomori",
+    cover: "AyaToyomori/1.jpeg",
+    images: Array.from({ length: 161 }, (_, i) =>
+      `AyaToyomori/${i + 1}.jpeg`
+    )
+  },
+  LisaTepes: {
+    name: "Lisa Tepes",
+    cover: "LisaTepes/1.jpeg",
+    images: Array.from({ length: 158 }, (_, i) =>
+      `LisaTepes/${i + 1}.jpeg`
+    )
+  },
          };
 
 const galleryGrid = document.getElementById("galleryGrid");
