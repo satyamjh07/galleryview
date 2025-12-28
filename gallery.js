@@ -266,6 +266,20 @@ const characters = {
       `LenoreRaino/${i + 1}.jpeg`
     )
   },
+  ShastiVikanes: {
+    name: "Shasti Vikanes",
+    cover: "ShastiVikanes/1.jpeg",
+    images: Array.from({ length: 155 }, (_, i) =>
+      `ShastiVikanes/${i + 1}.jpeg`
+    )
+  },
+  Terena: {
+    name: "Terena",
+    cover: "Terena/1.jpeg",
+    images: Array.from({ length: 164 }, (_, i) =>
+      `Terena/${i + 1}.jpeg`
+    )
+  },
   
          };
 
