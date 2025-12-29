@@ -1,243 +1,229 @@
+/* =====================
+   RESET & BASE
+===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0f0f14;
+  --card-bg: #1b1b25;
+  --text: #ffffff;
+  --muted: #b5b5c5;
+  --accent: #ff4d8d;
+}
+
 body {
-  background: #0b0b0b;
-  color: #fff;
-  font-family: Poppins, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ================= HEADER ================= */
+/* =====================
+   HEADER
+===================== */
 .header {
-  height: 70px;
-  background: linear-gradient(90deg, #120909, #1c0b0b);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  align-items: center;
+  padding: 14px 18px;
 }
 
-.header button {
-  background: crimson;
+.header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header button,
+.theme-btn {
+  background: var(--accent);
   border: none;
-  color: white;
+  color: #fff;
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
-/* ================= CHARACTER GRID ================= */
+/* =====================
+   THEME SWITCHER
+===================== */
+.theme-switcher {
+  display: flex;
+  gap: 8px;
+}
+
+/* =====================
+   CHARACTER GRID
+===================== */
 .gallery-grid {
-  padding: 20px;
+  padding: 18px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
 }
 
+/* =====================
+   CHARACTER CARD
+===================== */
 .character-card {
-  background: #111;
+  background: var(--card-bg);
   border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .character-card img {
   width: 100%;
-  height: 240px;
+  height: 200px;
   object-fit: cover;
 }
 
 .character-card h3 {
-  text-align: center;
   padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text);
 }
 
-/* ================= GALLERY MODAL ================= */
+/* =====================
+   GALLERY MODAL
+===================== */
 .gallery-modal {
   position: fixed;
   inset: 0;
-  background: #0b0b0b;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   display: none;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 100;
 }
 
-/* ================= GALLERY HEADER ================= */
 .gallery-header {
-  height: 70px;
-  flex-shrink: 0;
-  background: #120909;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  align-items: center;
+  padding: 14px 18px;
+}
+
+.gallery-header h2 {
+  font-size: 1rem;
 }
 
 .close-btn {
-  font-size: 24px;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
-/* ================= SCROLLABLE IMAGE AREA ================= */
+/* =====================
+   IMAGE GRID (SCROLL FIX)
+===================== */
 .gallery-images {
-  flex: 1; /* TAKE REMAINING SPACE */
+  flex: 1;
+  padding: 16px;
   overflow-y: auto;
-  overflow-x: hidden;
-  padding: 20px;
-
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-
-  column-count: 4;
-  column-gap: 16px;
+  column-count: 2;
+  column-gap: 12px;
 }
 
-/* Masonry images */
+@media (min-width: 768px) {
+  .gallery-images {
+    column-count: 4;
+  }
+}
+
 .gallery-images img {
   width: 100%;
-  margin-bottom: 16px;
-  border-radius: 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  break-inside: avoid;
+  transition: transform 0.2s ease;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .gallery-images {
-    column-count: 3;
-  }
+.gallery-images img:hover {
+  transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
-  .gallery-images {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .gallery-images {
-    column-count: 1;
-  }
-}
-
-/* ================= IMAGE ZOOM MODAL ================= */
+/* =====================
+   IMAGE ZOOM MODAL
+===================== */
 .image-zoom-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0, 0, 0, 0.95);
   display: none;
-  align-items: center;
   justify-content: center;
-  z-index: 2000;
-  touch-action: pan-y;
+  align-items: center;
+  z-index: 200;
 }
 
 .image-zoom-modal img {
-  max-width: 95%;
-  max-height: 95%;
-}
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 40px;
-  background: rgba(255,255,255,0.15);
-  border: none;
-  color: white;
-  padding: 15px 20px;
-  cursor: pointer;
-  border-radius: 50%;
-  user-select: none;
-}
-
-.nav-btn:hover {
-  background: rgba(255,255,255,0.3);
-}
-
-.nav-btn.left {
-  left: 20px;
-}
-
-.nav-btn.right {
-  right: 20px;
-}
-
-.image-counter {
-  position: absolute;
-  bottom: 25px;
-  color: #fff;
-  font-size: 14px;
-  background: rgba(0,0,0,0.5);
-  padding: 6px 12px;
-  border-radius: 20px;
-  letter-spacing: 1px;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  border-radius: 12px;
+  animation: zoomIn 0.25s ease;
 }
 
 .zoom-close {
   position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 30px;
+  top: 18px;
+  right: 18px;
+  font-size: 1.5rem;
   cursor: pointer;
-}
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
+  color: white;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ff9900;
-  text-decoration: none;
+/* =====================
+   THEMES
+===================== */
+
+/* 🌙 DARK (default) */
+.theme-dark {
+  --bg: #0f0f14;
+  --card-bg: #1b1b25;
+  --text: #ffffff;
+  --accent: #ff4d8d;
 }
 
-.footer-links {
-  display: flex;
-  gap: 20px;
+/* ⚡ NEON */
+.theme-neon {
+  --bg: #050014;
+  --card-bg: #0b0225;
+  --text: #e7e7ff;
+  --accent: #00fff7;
 }
 
-.footer-link {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.footer-link:hover {
-  color: #ff9900;
-}
-
-.footer-social {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icon {
-  color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease-in-out;
-}
-
-.social-icon:hover {
-  color: #ff9900;
-}
-
-.footer-copyright {
-  margin-top: 10px;
-  font-size: 0.8rem;
-                   }
-
+/* 🌸 ANIME */
+.theme-anime {
+  --bg: url("images/theme/anime-bg.jpg") center/cover no-repeat fixed;
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --accent: #ff9edb;
+  }
