@@ -399,3 +399,18 @@ function handleSwipe() {
     prevImage(); // swipe right
   }
 }
+/* =====================
+   THEME SYSTEM
+===================== */
+
+function setTheme(theme) {
+  document.body.classList.remove("theme-dark", "theme-neon", "theme-anime");
+  document.body.classList.add(`theme-${theme}`);
+  localStorage.setItem("theme", theme);
+}
+
+/* Load saved theme */
+(function () {
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  setTheme(savedTheme);
+})();
