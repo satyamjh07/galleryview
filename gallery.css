@@ -221,9 +221,19 @@ body {
 }
 
 /* 🌸 ANIME */
+@media (min-width: 768px) {
 .theme-anime {
   --bg: url("images/bdsm/back.jpeg") center/cover no-repeat fixed;
   --card-bg: rgba(255, 255, 255, 0.12);
   --text: #ffffff;
   --accent: #ff9edb;
   }
+   }
+@media (min-width: 768px) {
+  .theme-anime {
+  --bg: url("bg.jpg") center/cover no-repeat fixed;
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --accent: #ff9edb;
+  }
+}
