@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Character Gallery</title>
+  <title>Fantasy Gallery</title>
   <link rel="stylesheet" href="gallery.css" />
 </head>
-<body>
+<body class="theme-dark">
 
   <header class="header">
-    <h1>Fantasy Gallery🔞</h1>
+    <h1>Fantasy Gallery</h1><div class="theme-switcher">
+  <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+  <button class="theme-btn" onclick="setTheme('neon')">Neon</button>
+  <button class="theme-btn" onclick="setTheme('anime')">Anime</button>
+    </div>
     <button onclick="goToAnime()">Go to Anime</button>
   </header>
 
@@ -32,30 +36,7 @@
 </div>
     <div class="gallery-images" id="galleryImages"></div>
   </div>
-  <footer>
-  <div class="footer-content">
-        <div class="footer-logo">
-          <a href="#" class="footer-link">AdultVerse</a>
-        </div>
-        <div class="footer-links">
-          <a href="https://adultverse.netlify.app/" class="footer-link">Home</a>
-          <a href="#" class="footer-link">Anime List</a>
-          <a href="#" class="footer-link" onclick="toggleOwnerSection()"
-            >About Owner</a
-          >
-          <a href="#" class="footer-link">Genres</a>
-          <a href="https://adultverse-contact.netlify.app/" class="footer-link">Contact</a>
-        </div>
-        <div class="footer-social">
-          <a href="#" class="social-icon">📷</a>
-          <a href="#" class="social-icon">🐦</a>
-          <a href="#" class="social-icon">📘</a>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        &copy; 2024 Universe Inc. All Rights Reserved.
-      </div>
-  </footer>
+
   <script src="gallery.js"></script>
 </body>
 </html>
