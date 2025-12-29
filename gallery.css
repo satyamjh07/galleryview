@@ -221,7 +221,7 @@ body {
 }
 
 /* 🌸 ANIME */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 .theme-anime {
   --bg: url("images/bdsm/back.jpeg") center/cover no-repeat fixed;
   --card-bg: rgba(255, 255, 255, 0.12);
