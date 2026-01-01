@@ -280,6 +280,35 @@ const characters = {
       `Terena/${i + 1}.jpeg`
     )
   },
+  KanaeHasuma: {
+    name: "Kanae Hasuma",
+    cover: "Kanae Hasuma/1.jpeg",
+    images: Array.from({ length: 167 }, (_,i) =>
+      `Kanae Hasuma/${i + 1}.jpeg`
+      )
+  },
+    
+  ArisuNonoyama: {
+    name: "Arisu Nonoyama",
+    cover: "Arisu Nonoyama/1.jpeg",
+    images: Array.from({ length: 132 }, (_,i) =>
+      `Arisu Nonoyama/${i + 1}.jpeg`
+      )
+},
+  EleonoraBern: {
+    name: "Eleonora Berm",
+    cover: "Eleonora Bern/1.jpeg",
+    images: Array.from({ length: 168 }, (_,i) =>
+      `Eleonora Bern/${i + 1}.jpeg`
+      )
+  },
+  Rui: {
+    name: "Rui",
+    cover: "Rui/1.jpeg",
+    images: Array.from({ length: 155 }, (_,i) =>
+      `Rui/${i + 1}.jpeg`
+      )
+  },
   
          };
 
